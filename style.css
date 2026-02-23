@@ -88,10 +88,15 @@ nav {
   display: flex;
   justify-content: center;
 }
+pre {
+  background-color: #eae1fb;
+  color: #292929;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
 
 code {
-  background-color: #2d2b33;
-  color: #EEE7E8;
   font-family: 'Courier New', Courier, monospace;
 }
 
