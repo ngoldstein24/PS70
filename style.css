@@ -110,3 +110,23 @@ code {
 #aboutme {
   padding: 20px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gallery{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.gallery img{
+  width:350px;
+  height:auto;
+}
+
+.gallery button{
+  font-size:24px;
+  padding:6px 12px;
+}

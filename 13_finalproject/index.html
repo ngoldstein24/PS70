@@ -23,8 +23,110 @@
 <div class="textcontainer">
 <p class="margin"></p>
 
-<h3>Final Project: [INSERT FINAL PROJECT HERE]</h3>
+<h3>Automatic Glider Movements in Response to Thermals and Wind</h3>
 
+<img src="gliding_gallery/gliding_gallery3.jpeg" alt="glider in sunflowers" style = "width:400px">
+
+<br></br>
+<h4>Table of Contents</h4>
+<ul>
+  <li><a href="#Background">Background</a></li>
+  <li><a href="#Initial_concept">The Concept</a></li>
+  <ul>
+      <li><a href="#3D_model">3D Model</a></li>
+      <li><a href="#materials">Materials</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+    </ul>
+  <li><a href="#section2">...</a></li>
+  <li><a href="#Final_result">Final Result</a></li>
+</ul>
+
+<h4 id="Background">Background</h4>
+<p></p>Starting in sophomore year of high school, my dad and I learned to compete in this sport called free flight gliding (part of the FAI). It's not a traditional sport but that's how we refer to it in the community so we're sticking with it. 
+There are lots of different divions—F1A, F1B, F1C, F1E, etc—but the one we compete in is F1A, which consists of a model airplane that you first fly with a string and then release it for its glide.
+You take the plane up in the air with a 50m long string and use this technique called circle-towing which allows you to keep the plane in the air to feel out the conditions. You adjust it to the wind conditions. You're looking for thermals, or hot air, because that's what helps gliders rise in the air.
+If you find yourself in a thermal (you'll feel an extra tug when the plane is right above your head, when the tension can't come from the act of it accelerating towards you at the end of a circle), then you launch the plane. You do this by taking the plane in one big circle and as it's coming around towards you,
+you run and pull it with (and I mean this technically) a shit ton of force and release the line. The contrast between this extreme amount of tension and none at all tells the plane to release itself from the string, cruise straight (up, if you release at the right angle) for a second or two, and then start gliding on its own in circles.
+The aim of the game is the have the plane glide for three minutes in the air. You get an hour to do this for each round, and there are seven total in a tournament. If you "max-out" and get three minutes for every round, you head to the fly-offs and start competing at 6 minute, 8-minute, and even 10-minute glides.
+</p>
+
+<p>That's the idea. On the techincal side, the glider has no motor and no controls once it's up in the air. The only control you have of it when it's off the ground is when it's still on the string, where tension tells the plane to go straight and slack tells it to start turning. The movement of the plane is driven by the rudder and stabilizer.
+  However, every plane is handmade (by this like one Russion dude—we call them Anton models), and therefore slightly different. And every flyer is different! So you can "trim" the model, or adjust its functions to fit your style of flying as well as the conditions. For example, if there is a lot of wind, you want the glider to go in tighter circles both on 
+  the line and in the glide (since thermals are like tornadoes such that they spin), so that the plane cannot be taken away by the wind more than you want it too. All those adjustments are done on an app and it connects to your model via bluetooth. (My dad actually just developed a new app for it that will be adopted as the used app!)
+  Same thing for the glide, you can adjust how it reacts to thermals. For example, if it feels an extra lift on one side of the plane, it means that the thermal is to the left of the plane and it can adjust its glide accordingly.
+</p>
+
+<p>This sport is technical and challenging and super fun! Some more fun facts: I won the Junior World Championships in Bulgaria in 2022 as the first ever US winner and second woman ever. The next year I competed in the adult world championships in France.
+  I haven't been able to participate as much as I would like to since I joined college because I have to be in California or abroad for it—competitions require a huge amount of flat land and generally good weather which the northeast doesn't really have, but I 
+  have been able to compete here and there in US and international competitions, the most recent being an international comp Arizona in January where I won! Don't let this fool you though, I was positively terrible at the sport for a solid two years (scoring zeros and breaking models), so it's been a long journey!
+</p>
+
+<p>
+  <img src="gliding_gallery/gliding_gallery1.jpeg" style="width: 500px;;">
+  <img src="gliding_gallery/gliding_gallery3.jpeg" style="width:280px;">
+    <img src="gliding_gallery/gliding_gallery4.jpeg" style="width:280px;">
+  <img src="gliding_gallery/gliding_gallery2.jpeg" style="width:500px;">
+    <img src="gliding_gallery/gliding_gallery6.jpeg" style="width:500px;">
+  <img src="gliding_gallery/gliding_gallery5.jpeg" style="width:280px;">
+</p>
+
+
+<br></br>
+<h4 id="Initial_concept">The Concept</h4>
+I really wanted to make something related to these planes because it will give me a chance to better understand and appreciate their workings.
+The idea I came up with though happened to be something that wouldn't be used in the context of this sport. 
+In F1A, or any other free flight glider competitions, the entire point is that once the plane is actively gliding, you cannot control it. It is not run by a motor nor can it be adjusted by anything you do.
+But other gliders exist! Ones that people actually fly in. Some of them have devices that can scan for thermals but I thought it would be interesting to think about a glider that could also automatically adjust to the readings to optimize air time.
+But I did some more thinking and realized that making this as well as a whole glider that actually flies would be extremely difficult and almost certainly impossible given the timeline.
+So, instead, I have decided to build **a heat and wind simulator for the rudder and stabilizer of a glider to react to.**
+This way, I can still make a working model of the control system and the glider's response to it, without having to worry about the actual mechanics of flying a plane.
+In addition, I would want to store the data of the heat and wind as well as the adjustments made on the rudder and stabilizer to generate a 3D track of the plane's subsequent motion as a way to help visualize the results of the simulator. I would probably do this with a simple app.
+
+
+<p><img src="glider_example.jpg" alt="photo of a glider in the air" style = "width:500px"></p>
+<br></br>
+
+<h4 id="3D_model">3D Model</h4>
+I have not completed my full 3D model but I am following these two tutorials (<a href="https://www.youtube.com/watch?v=ZZaQ_AJ0eN0s">one</a>, <a href="https://www.youtube.com/watch?v=8s2uBTFPOEk">two</a>)
+for the general structure (mostly because I still want to stay true to correct airfoil). I will not make wings. I will also add a stand for the fuselage to rest on. 
+I still need to do more thinking about where the controls would go, hinges, etc, but the next two weeks learning about electronic inputs and outputs should help me with that!
+I will continue to update this and note that on the weekly webpages.
+<br></br>
+
+<h4 id="materials">Materials</h4>
+I again, do not know everything for this. I will need to do some more digging into the lab's resources and will continue to update this.
+
+<ul>
+  <li>For the fuselage: This is sturdy, and we're not flying this anyway so it doesn't have to be very lightweight. We can simply use plywood or plastic (not sure what would make sense here given our resources?) for a more sleek look.</li>
+  <li>For the tail (rudder, elevator, tailpin, fin): Typically same material as wings, so very lighweight. Either ribbed from wood and wrapped in thin thin-sheet balsa or plastic film, or foam (insulation foam is most accessible but options include Spyder Foam and Rohacell foam) wrapped in fiberglass/carbon cloth. 
+    Similar to the fuselage, since we are not flying this we can use less lightweight materials and disregard a "core" with a wrap and just construct a solid piece of wood.</li>
+  <li>For hinges: in the case of lightweight models, a popular hinge is the CA (Cyanoacrylate) hinge which is this thin fibrous plastic material. You can cut these thin pieces out to insert as hinges between pieces or there is also CA glue. I could also go for the simpler du-bro hinge. I don't actually know how I'm going to move things in a smooth, sleek way but I'm excited to learn soon!
+  </li>
+  <li>A stand for the model: can use plastic here</li>
+  <li>Paint or stickers or something like that to decorate the plane!</li>
+  <li>Arduino board</li>
+  <li>Battery & wires and such</li>
+  <li>Servo motors for precise rudder and stabilizer adjustments</li>
+  <li>Temperature and wind sensors (will get more details once we learn about electronic inputs and outputs the next two weeks)</li>
+  <li>Bluetooth (will also learn later) to connect to software for collecting output data</li>
+</ul>
+
+References I used to learn about materials for gliders:
+<ul>
+  <li><a href="The-Glider-and-its-Components.pdf" download="The-Glider-and-its-Components.pdf">General materials for gliders</a></li>
+  <li><a href="https://www.modelaviation.com/freeflightmaterials">Modern glider materials</a></li>
+  <li><a href="https://www.fmshobby.com/blogs/news/rc-plane-hinge-types-guide?srsltid=AfmBOoog375w7DE5tisogvoaA9vPTQ1ZeKK0n5bqE8bms9nLIMhZAKtX#:~:text=Tape%20Hinges:%20The%20simplest%20method,hinge%20that%20is%20incredibly%20durable.">Hinge materials for gliders</a></li>
+</ul>
+
+<h4 id="timeline">Timeline</h4>
+<ul>
+  <li>Week 6: Learn about electronic inputs specifically heat sensors and think about what could serve as a wind sensor. Practice gathering the input data (without bluetooth yet) onto python or something like that. Model the rudder and stab with airfoil for future CNC use.</li>
+  <li>Week 7: Learn about electronic outputs and think about outputs that would work with servo motors. Practice gathering the data. Given these two weeks, think about where the servos and readers should sit (inside fuselage? outside?)</li>
+  <li>Week 8: CNC the rudder and stabilizer. Print the fuselage.</li>
+  <li>Week 9: Learn about bluetooth!</li>
+  <li>Weeks 10,11,12: Integrate the components and iterate! Figure out how to make a 3D track of the plane's subsequent motion.</li>
+</ul>
+<br></br>
 
 </div>
 </xmp>
