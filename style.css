@@ -94,10 +94,12 @@ pre {
   padding: 15px;
   border-radius: 6px;
   overflow-x: auto;
+  font-size: 14px;
 }
 
 code {
   font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
 }
 
 .caption {
