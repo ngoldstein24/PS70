@@ -26,7 +26,7 @@
 <h3>Week 7: Electronic Outputs & MVP!</h3>
 
 <h4>Minimum Viable Product for Final Project</h4>
-<p>Another extremely long week where you really wouldn't know it from looking at the final result! 
+<p>Another extremely long week where you really wouldn't know it from looking at the final result! (Update from Sunday 3/29: 25 total hours and actually I am very pleased with the results!! See bottom for improvements.)
   For my MVP, I focused on making the rudder and stab move according to a thermal sensor. The two components that I decided to delay are the fuselage and the wind sensor.
   For the sake of time, I could not implement the wind sensor because I had to calibrate and it was new so I would need to learn how to use it. 
   As for the fuselage, I am waiting for when I do my CNC project next week to see what that would actually entail. That includes seeing just how compact I can make the servos and wiring in my project.
@@ -117,8 +117,9 @@ I only needed it to hold pin position, an attach function, and a write function,
 };
 </code></pre>
 
-<h5>Putting it all together and final result</h5>
-<p>Every detail took so long! But finally, I was able to put the top of the box on, the plane part on, and screw the plane parts to the attachers. That step would make it a lot harder to dissasemble later.
+<h5>Putting it all together and first result (3/25)...</h5>
+<p>Every detail took so long! But finally, I was able to put the top of the box on, the plane part on, and screw the plane parts to the attachers. 
+  That step would make it a lot harder to dissasemble later.
   Even though I triple checked that the servos worked before I screwed everything together, of course, I was a fool to believe that would be the end of that.
   I screwed it on, and some of the breadboard wires came loose and I had to unscrew stuff and put it together, and anyways, I went back to adjust my wiring to be a lot sturdier.
 </p>
@@ -129,7 +130,7 @@ I only needed it to hold pin position, an attach function, and a write function,
   I couldn't tell with everything screwed together, and when the servos didn't have the plane parts attached to them (just the wood rods), they moved perfectly. 
 </p>
 
-<p> Anywho, here are the final photos and videos! The first video is when it detects a thermal (rudder moves to the right, stab moves down) and the second is when it escapes the thermal and goes back to it's original positioning (rudder moves back to center and stab moves up).</p>
+<p> Anywho, here are the photos and videos AS OF WEDNESDAY (3/25)! The first video is when it detects a thermal (rudder moves to the right, stab moves down) and the second is when it escapes the thermal and goes back to it's original positioning (rudder moves back to center and stab moves up).</p>
 
 <p> <img src="final1.jpeg" alt="Final MVP" width="500px"> </p>
 <video width="450" height="300" controls>
@@ -140,6 +141,20 @@ I only needed it to hold pin position, an attach function, and a write function,
       <source src="escaped_thermal.mov" type="video/mp4">
 </video>
 
+<br> </br>
+<h5>...Improvements!! Final Result!</h5>
+<p>This wasn't working that great, obviously, so I went back and changed the strategy.
+  The main change was the wooden rod. I decided to ditch that and instead use a strong string and springs. 
+  I removed the servo attachers and connected the string directly to the servo cap. All the movement would come from pulling motions: 
+  Servo pulls the string to a thermal position and spring pulls the plane part back to no thermal position.
+  Surprisingly, that was mostly straightforward. Small additions: I added a wooden rod right on top of the rudder stab (by making it exactly the size of the inside of the box and shoving it down!) because it would sometimes tilt with the spring force. 
+  Additionally, the top of the box connected to the rest of the box with a rubber band.
+  Below are the photos of the final plane, and a video of it detecting a thermal (first move from the heat of my finger) and escaping the thermal (second move).</p>
+
+<p> <img src="plane_full.png" alt="Final plane with the springs" width="500px"> 
+  <video width="500" height="350" controls>
+      <source src="finalvideo.mov" type="video/mp4">
+</video>
 </div>
 </xmp>
 </body>
