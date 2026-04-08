@@ -26,16 +26,66 @@
 <h3>Week 9: Radio, WiFi, Bluetooth (IoT)</h3>
 
 
-<p class="margin">   </p>
-<div class="flexrow">
-  <a id="btn" href="wk9.zip" download>Download my files from this week!
-  </a>
-</div>
-<p class="margin">   </p>
+<h4>Assignment: Dog Facts with Eliza and Noa</h4>
 
-<h4>Assignment: [Program something with IOT]</h4>
+<p>Eliza and I connected to the wifi and pulled from a dog facts API using the base code from lecture. We then created a web page where you can click a button to generate new dog facts.
+  We also pulled from the OpenAI API to write a haiku about the specific dog fact. We did this through a simple python server.
+</p>
 
+<p> This is the API link: <a href="https://dogapi.dog/api/v1/facts?number=1">https://dogapi.dog/api/v1/facts?number=1</a>. 
+  We used a buffer of 500 since most dog facts were pretty short. 
+</p>
 
+<p>You can download the entire Arduino code here: <a href="WifiAssignment.ino" download>Dog Facts Arduino Code</a>. And the python code here: <a href="app.py" download>Dog Facts Python Code</a>. 
+  Here is a snippet of the code that outputs the haiku:
+</p>
+<pre><code>void generateHaiku() {
+  HTTPClient http;
+  http.begin(backendEndpoint);
+  http.addHeader("Content-Type", "application/json");
+
+  DynamicJsonDocument req(1024);
+  req["fact"] = currentFact;
+
+  String body;
+  serializeJson(req, body);
+
+  int code = http.POST(body);
+
+  if (code > 0) {
+    String payload = http.getString();
+    Serial.println("Haiku response:");
+    Serial.println(payload);
+
+    DynamicJsonDocument resp(4096);
+    DeserializationError error = deserializeJson(resp, payload);
+
+    if (!error) {
+      const char* haiku = resp["haiku"];
+      if (haiku) {
+        currentHaiku = String(haiku);
+      } else {
+        currentHaiku = "No haiku returned.";
+      }
+    } else {
+      Serial.print("Haiku JSON parse failed: ");
+      Serial.println(error.c_str());
+      currentHaiku = "Failed to parse haiku.";
+    }
+  } else {
+    Serial.print("Haiku request failed, code: ");
+    Serial.println(code);
+    currentHaiku = "Failed to generate haiku.";
+  }
+
+  http.end();
+}
+</code></pre>
+
+<p>And here is the final result:</p>
+<video width="600" height="450" controls>
+      <source src="demo.mov" type="video/mp4">
+</video>
 
 
 </div>
