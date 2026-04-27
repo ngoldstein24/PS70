@@ -25,7 +25,171 @@
 
 <h3>Weeks 10-12: Machine Building</h3>
 
-<h4>Assignment: Build a Drawing Robot</h4>
+<h4>Pen Plotter! Dot Drawer + Pen Changer by Alice Liu, Joel Kizito, Talia Day, and Noa Goldstein</h4>
+
+<p> Our group wanted to make an automatic drawing machine for dot art (see below for example) as well as an automatic pen changer.
+</p>
+
+<p> <img src="dot_drawing_ex.jpg" alt="example of dot drawing" width="400">  
+</p>
+
+<p>Our inspiration for the automatic pen changer came from three different setups (links are all videos). The first was a <a href = "https://www.youtube.com/watch?v=xA7qeQtGWZs">clip-on mechanism</a>, the second was a <a href="https://www.youtube.com/watch?v=virDtVVt2Xo" >magnet mechanism</a>, and the third was a  <a href="https://www.reddit.com/r/PlotterArt/comments/1oc8jm2/the_porterxy_is_back_this_time_with_a_toolchanger/#lightbox" >rod and hole mechanism</a>.
+We decided to combine the latter two, such that the end effector of the plotting machine would have a hole for a rectangular rod in the pen holder to slide into. 
+All the pens would have their own pen holders that would then attach to the pen box using magnets when they were not in use. 
+</p>
+<br></br>
+
+<h5>The Hardware</h5>
+<p>After assembling the starter kit, we first soldered the bread board. Given that the uniqueness of our project stemmed from the software and the end effector, we could keep all the wiring the same.
+For the longer wires, we used the rubber casings and heat gun for organization.
+</p>
+
+<p> <img src="breadboard.jpeg" alt="breadboard wiring" width="200"> 
+    <img src="long_wires.jpeg" alt="clean long wires" width="300"> 
+</p>
+
+<p>We then 3D printed multiple variations of our end effector, the pen holders, and the pen box. 
+  Our first attempt was a bit ridiculous. We were worried that the pen would be pushed out of the pen holder because we would be pressing it up and down to get differently sized dots. So we printed one long pen holder.
+  But it was too big and would take way too long to repeat. 
+  See our CAD designs for the end effector <a href="https://a360.co/42og6cj">here</a> and this iteration of pen holder <a href="https://a360.co/4tr4gKm">here</a>.
+</p>
+
+<p><img src="end_effector.png" alt="end effector CAD" width="400"> </p>
+<p> <img src="penholder2.jpeg" alt="iteration 1 of pen holder" width="300"> 
+    <img src="penholder3.jpeg" alt="iteration 1 of pen holder" width="300"> 
+</p>
+<br>
+<p>
+  Our second design was getting much closer. The pen sat nicely (not wobbly) inside it, and it slid into the end effector. 
+  But 1), it was a very tight fit, much stronger than whatever magnets we were going to use to hold the pen holder onto the pen box once we wanted to put the pen away. 
+  And 2) it was also flipped! If we possitioned it correclty with the end effector, the pen would be pointing to the sky. In addition to this, we printed a pen box that was accidentally too big...
+  See our CAD designs for this iteration's <a href="https://a360.co/4dWTXcf">pen holder </a> and <a href="https://a360.co/48h5srk">pen box</a>.
+</p>
+
+<p> <img src="penholder1.jpg" alt="iteration 2 of pen holder" width="300"> 
+</p>
+<br>
+
+<p>In our third attempt, we made the rod a little smaller for a looser fit and added a hole for both the magnets and a screw (to hold the pen tight). 
+  It ended up being too loose of a fit! But the pen definitely sat tight in there, which is important. 
+  See our CAD design for this iteration <a href="https://a360.co/4dWTXcf">here</a>.
+</p>
+
+<video width="300" height="450" controls>
+      <source src="loose_holder.mp4" type="video/mp4">
+</video>
+<video width="300" height="450" controls>
+      <source src="tight_pen.mp4" type="video/mp4">
+</video>
+
+<br></br>
+<p>Finally, we had a version that we were happy with. It had a good fit, a place to screw our pen in, and two magnets in the back (as opposed to one, for stability). We printed the box holder to fit two pens.
+  Note that the "holes" you see in the design are for faster printing.
+See our CAD designs for this iteration's <a href="https://a360.co/4sMIZJV">pen holder </a> and <a href="https://college1088.autodesk360.com/g/shares/SH90d2dQT28d5b6028111ec294bb4936f740">pen box</a>.
+</p>
+
+<p> <img src="penholder4.jpeg" alt="iteration 3 of pen holder" width="300"> 
+    <img src="penholder6.jpeg" alt="iteration 3 of pen holder attached to end effector" width="300">  
+    <img src="penholder5.jpeg" alt="iteration 3 of pen holder, new angle" width="400">
+    <img src="penholder7.jpeg" alt="iteration 3 of pen holder (back side) with pen box " width="400"> 
+    <img src="penholder8.jpeg" alt="iteration 3 of pen holder (front side) with pen box" width="500"> 
+  </p>
+
+<p> In order for this to align well with the height of our entire pen plotter. We also designed and printed a pen box lifter that would lift the pen holder. 
+  See our CAD design for this pen lifter <a href="https://a360.co/3OG5mmu">here</a>.
+</p>
+
+<p> <img src="penlifter.jpeg" alt="pen box lifter" width="400">
+  <img src="lifter_box.jpeg" alt="pen box lifter, pen box, and pen holder all together" width="400">
+ </p> 
+
+<p>Here were all of the iterations we didn't use fit together! Whew.</p>
+
+<p> <img src="iterations.jpeg" alt="failed attempts" width="400"> </p>
+
+<p>And here is what our entire setup looked like after we put everything in the correct place and screwed it all securely:</p>
+
+<p> <img src="setup.jpg" alt="our entire setup" width="500"> </p>
+
+<p>Some issues we ran into while testing the software that ended up being hardware issues and the fixes we tried:
+<ul>
+  <li>Homing was broken for around 3 days. This was a hardware issue and it was replaced by fixing the switch on the x-axis.</li>
+  <li>The Y axis motor was not running. The wires were mixed up and making the stepper motor jitter in place.</li>
+  <li>The base plate screw hole was stripped and was not holding the belt in place properly. Shout out Bobby for 2 am help with fixing it.</li>
+</ul>
+
+<br>
+<h5>The Software</h5>
+
+<p>We started with the startup code, and that was communicating via a web server hosted on the Arduino. For reference the code for that is given <a href="https://nathanmelenbrink.github.io/lab/machine/drawing-machine-websocket.zip">here</a>.
+  We wanted code that gave us dots that we can then punch the dots using our drawing machine. 
+  We found this website  <a href="https://dotomatic3000.com/">Dotomatic3000</a>, and scraped the code using the inspect tool since it was all client-side.
+</p>
+
+<p>We then converted the code to Python so that we could run scripts with our own test images. 
+  We have three python scripts, one which generates dots from an image <code>generate_points.py</code>, 
+  one which previews the image made by the dots <code>preview_image.py</code>, 
+  and <code>run-machine.py</code> which communicates with the Arduino over Serial. 
+  All of our code is on <a href="https://github.com/aluckyducky/ps70-dotbot/tree/main/flask_app">this Github</a>.
+</p>
+
+
+<p>Software issues we ran into:
+<ul>
+  <li>Reliably communicating with the Arduino over Serial involves talking to the Arduino and waiting for feedback. 
+    We went for this handshake style approach, where a running python script tells the Arduino, hit these points next, and when the Arduino does it, it sends a Serial OK back to the python script.</li>
+  <li>Calibrating the servo angle and the time it stays down to ensure we get the points and the intensity we want.</li>
+  <li>Brownouts, when the servo is running, it sometimes resets and starts the script all over again, when the current spikes. Might add another 5v power supply just to prevent that.</li>
+</ul>
+</p>
+
+<h5>Dot drawing accomplished!!</h5>
+<p>Here is an example of a picture (first image) that we were able to convert to dot art (second image) and successfully print wtih different sized dots (third image)!!</p>
+
+<p><img src="duck_ref.jpg" alt="duck reference image" width="250">
+  <img src="duck_dots.jpg" alt="duck dot image" width="300">
+  <img src="duck_complete.jpg" alt="recreated dotted duck with our machine!" width="300">
+</p>
+
+<p>We were also able to successfully draw a circle. As well as Bobby :) </p>
+
+<video width="450" height="300" controls>
+      <source src="circle.mov" type="video/mp4">
+</video>
+
+<p><img src="bobby.JPG" alt="dotted picture of bobby" width="400"></p>
+
+<h5>Pen Changing!</h5>
+
+<p>This part was tricky because we had to make sure that the pen box would be at exactly the right height for the end effector to be able to attach to the pen holders.
+  This was complicated by the fact that the pen box had to be attached to the board (which is what our pen box lifter was for) as well as the fact that the end effector droops a bit on the z-axis
+  when it is farther away from the home base. So we did lots of testing on where it should be, reprinted the pen box lifter so that it wouldn't add height to the pen box but rather just keep it attached to the board,
+  and it worked. 
+  Download our CAD file for the new pen box lifter <a href="LINK">here</a>.
+</p>
+
+<p>At least, it worked when the pen holder was in the exact correct position. We tested where the pen holder should be based on where the end effector can reach as well as how much it droops when it moves away from the base. 
+  We then started testing exactly which (x,y) points we should be moving to in order to get the pens in and out of the pen holder but we ran out of time. That is a super minor issue though that just requires another couple hours of testing and then would be set.
+  </p>
+
+<p>  When we were doing our testing and changing of the pens, we were manually putting in coordinates to move to, but eventually it can become a function for "take out left pen" or "return right pen," etc.
+</p>
+
+<p>One other thing that we realized when we were testing this is that the magnets we used to hold the pens to the pen holders were too strong. So even at full speed, the end effector was not able to remove pens from the pen holder.
+  In the video below, you'll see that the end effector slot into a pen to pick it up out of the pen holder, and the machine starts to rattle. With a tiny push, it can gather the force to pull out. 
+</p>
+
+<video width="450" height="300" controls>
+      <source src="rattling.mov" type="video/mp4">
+</video>
+
+<p>But it was very successful dropping a pen off into the pen holder! See video below (ignore minor tweeking of the location of the pen holder).</p>
+
+<video width="450" height="300" controls>
+      <source src="penout.MOV" type="video/mp4">
+</video>
+
+<p>Overally, this was a huge sucess!! Really clear next steps if we ended up developing it more. Yay team!</p>
 
 
 </div>
