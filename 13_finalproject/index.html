@@ -23,7 +23,7 @@
 <div class="textcontainer">
 <p class="margin"></p>
 
-<h3>Automatic Glider Movements in Response to Thermals and Wind</h3>
+<h3>Automatic Glider Movements in Response to Thermals</h3>
 
 <img src="gliding_gallery/gliding_gallery3.jpeg" alt="glider in sunflowers" style = "width:400px">
 
@@ -32,13 +32,17 @@
 <ul>
   <li><a href="#Background">Background</a></li>
   <li><a href="#Initial_concept">The Concept</a></li>
+  <li><a href="#together">Putting it together</a></li>
   <ul>
-      <li><a href="#3D_model">3D Model</a></li>
-      <li><a href="#materials">Materials</a></li>
-      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#3D_model">3D Model of the Glider and Assembly</a></li>
+      <li><a href="wiring">Wiring and Software</a></li>
     </ul>
-  <li><a href="#section2">...</a></li>
   <li><a href="#Final_result">Final Result</a></li>
+  <li><a href="#Old">Old Documentation</a></li>
+  <ul>
+    <li><a href="#materials">Materials</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+  </ul>
 </ul>
 
 <h4 id="Background">Background</h4>
@@ -73,28 +77,96 @@ The aim of the game is the have the plane glide for three minutes in the air. Yo
 
 <br></br>
 <h4 id="Initial_concept">The Concept</h4>
-I really wanted to make something related to these planes because it will give me a chance to better understand and appreciate their workings.
+<p>I really wanted to make something related to these planes because it will give me a chance to better understand and appreciate their workings.
 The idea I came up with though happened to be something that wouldn't be used in the context of this sport. 
 In F1A, or any other free flight glider competitions, the entire point is that once the plane is actively gliding, you cannot control it. It is not run by a motor nor can it be adjusted by anything you do.
 But other gliders exist! Ones that people actually fly in. Some of them have devices that can scan for thermals but I thought it would be interesting to think about a glider that could also automatically adjust to the readings to optimize air time.
 But I did some more thinking and realized that making this as well as a whole glider that actually flies would be extremely difficult and almost certainly impossible given the timeline.
-So, instead, I have decided to build **a heat and wind simulator for the rudder and stabilizer of a glider to react to.**
+So, instead, I have decided to build **a heat and altitude simulator for the rudder and stabilizer of a glider to react to.**
 This way, I can still make a working model of the control system and the glider's response to it, without having to worry about the actual mechanics of flying a plane.
-In addition, I would want to store the data of the heat and wind as well as the adjustments made on the rudder and stabilizer to generate a 3D track of the plane's subsequent motion as a way to help visualize the results of the simulator. I would probably do this with a simple app.
-
+</p>
 
 <p><img src="glider_example.jpg" alt="photo of a glider in the air" style = "width:500px"></p>
 <br></br>
 
-<h4 id="3D_model">3D Model</h4>
-I am following these two tutorials (<a href="https://www.youtube.com/watch?v=ZZaQ_AJ0eN0s">one</a>, <a href="https://www.youtube.com/watch?v=8s2uBTFPOEk">two</a>)
-for the general structure (mostly because I still want to stay true to correct airfoil). I will not make wings. I will also add a stand for the fuselage to rest on. 
-I still need to do more thinking about where the controls would go, hinges, etc, but the next two weeks learning about electronic inputs and outputs should help me with that!
-I will continue to update this and note that on the weekly webpages.
+<h4 id="together">Putting it together</h4>
 
-See <a href="../06_inputs/index.html">Week 6</a> notes for the CAD files I made as well as the resources to produce them.
+<h3 id="3D_model">3D Model of the Glider and Assembly</h3>
+<p>I am following these two tutorials (<a href="https://www.youtube.com/watch?v=ZZaQ_AJ0eN0s">one</a>, <a href="https://www.youtube.com/watch?v=8s2uBTFPOEk">two</a>)
+for the general structure (mostly because I still want to stay true to correct airfoil). I will not make wings.  
+</p>
+
+<p>See <a href="../06_inputs/index.html">Week 6</a> notes for the CAD files I made originally as well as the resources to produce them. 
+<a href="../07_outputs/index.html">Week 7</a> has a lot of details for the thinking behind the entire assembly, calibration of servos, and code of my MVP. For this documentation, I mostly only include new updates.
+</p>
+
+<p>However, once I made the actual final iteration, I decided to not CNC the 3D fuselage because after CNC week, I decided that would be a lot of work and not necessary!
+  So, I used the original CAD files to find the cross section of the fuselage and print two of those to create the sides of my fuselage. 
+  I had to scale both the fuselage and the rudder and stab in order to make sure that the large servos I would be using would fit. 
+</p>
+
+<p>Like for my MVP, I designed internal structure to my fuselage to have the servos and breadboard sit in an organized way. 
+  I also laser cut kerf-bended wood pulling from <a href="https://www.youtube.com/watch?v=QvcpBnxsQws">this tutorial</a>.
+  Based on the bend radius testing demonstrated in that video, I determined that to fit the tightest turn radius (a little over 8mm) of my fuselage (the tip), I would
+  need roughly a 1.3mm kerf spacing. As for the length, I used my CAD to see that I would need a 410mm length to cover the entire curved part of the fuselage.</p>
+
+<p><img src="bend_radius.png" alt="screenshot of bend radius on fuselage CAD" style = "width:300px"></p>
+<p><img src="kerf_test.jpeg" alt="kerf bending wood!" style = "width:300px"></p>
+
+<p>Putting together the plane parts looked very similar to the MVP except I had assembled in a much better order (like preparing to drill holes before screwing bolts in! Yay growth!).
+  I used larger hinges than before, which accounted a bit for my larger rudder and stab (remember the scaling) but also made it more stable. 
+  I had also ordered new springs that would be less stiff (but it came in a huge box of various spring types so that is my donation to the lab!).
+  To attach the servo strings to the plane parts, I didn't 3D print pieces this time but used specific lengths of nuts and bolts jutting out of the plane parts to tie the strings around. 
+  Although it was very finnicky trying to make the string taut, it worked well!
+</p>
+
+<p>
+  Download my DXF files <a href="Final Project DXF Files.zip" download>here</a>.
+</p>
+
+<p><img src="lasercut.jpg" alt="laser cuttings of all my design pieces" style = "width:400px"></p>
+<p><img src="planeparts1.jpeg" alt="hinges on plane parts (from the back)" style = "width:300px">
+   <img src="planeparts2.jpeg" alt="hinges on plane parts (from the front)" style = "width:300px">
+</p>
+<p> <img src="stringtie.jpeg" alt="bolts that strings tie on to on plane parts" style = "width:300px"> </p>
+<p> <img src="config1.jpeg" alt="setup inside the fuselage of servos and breadboard" style = "width:500px"> 
+<img src="config2.jpeg" alt="setup inside the fuselage of servos and breadboard" style = "width:300px"> 
+</p>
+
+And here is it all together both with and without the cover:
+
+<p><img src="planeparts.jpeg" alt="plane parts attached to fuselage" style = "width:400px">
+<img src="full_nocover.jpeg" alt="full plane no cover on top" style = "width:400px"> </p>
+<p><img src="full_cover.jpeg" alt="full plane with cover on top" style = "width:400px"></p>
+
 <br></br>
+<h4 id = "wiring">Wiring and Software</h4>
 
+<p>My wiring was identical to the MVP from week 6 except I also added a new sensor! Yipee! 
+  This <a href="https://www.adafruit.com/product/2651 ">Adafruit BP280 sensor</a> would detect altitude. 
+  The idea was that to detect a thermal, the glider would need to sense sufficient increases in temperature and altitude as an additional confirmation to change the motion of the plane. 
+</p>
+
+<p>My code remained almost exactly the same except for the addition of the sensor. But all of the logic is exactly the same. 
+  I pulled from the sample code and setup instructions from the same Adafruit website above. 
+  Download my complete Arduino code <a href="temp_wind_read.ino" download>here</a>.
+</p>
+<br></br>
+<h4 id="Final_result">Final Result</h4>
+<p>Here is a video of the final result! I couldn't get a complete video of it also adjusting to altitude because the servos stopped responding to the power for some reason on Wednesday,
+  but here is a video of the plane parts moving!
+  </p>
+
+<video width="600" height="450" controls>
+      <source src="final_vid.mov" type="video/mp4">
+</video>
+
+<p>This was such an amazing semester—I learned so much and had a lot of fun! I've never done a class remotely like this and now I'm grateful I have all these handy building skills under my belt!</p>
+<p><img src="final_result.jpeg" alt="me with the glider!" style = "width:400px"></p>
+
+
+<br></br>
+<h3 id="Old Documentation">Old/Irrelevant Documentation for Final Project (like initial planning etc)</h3>
 <h4 id="materials">Materials</h4>
 I again, do not know everything for this. I will need to do some more digging into the lab's resources and will continue to update this.
 
